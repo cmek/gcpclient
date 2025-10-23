@@ -1,0 +1,19 @@
+[project]
+name = "gcpclient"
+version = "0.1.0"
+description = "Wrapper for GCP Cloud Interconnect APIs"
+readme = "README.md"
+authors = [
+    { name = "Szymon Roczniak", email = "simon@dischaos.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "google-cloud-compute>=1.40.0",
+]
+
+[project.scripts]
+gcpclient = "gcpclient:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
