@@ -7,12 +7,12 @@ logger = logging.getLogger(__name__)
 
 
 class GCPClient:
-    def __init__(self, project_id=None, region=None):
-        self.project_id = project_id
+    def __init__(self, project_id, region):
         self.region = region
         self.credentials, self.project = google.auth.default(
             scopes=["https://www.googleapis.com/auth/compute"]
         )
+        self.project = project_id
         logger.debug(
             f"Initialized GCP with project: {self.project}, credentials: {self.credentials}"
         )
